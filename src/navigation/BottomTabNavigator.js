@@ -5,15 +5,16 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Feather from "@expo/vector-icons/Feather";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
+import { ExploreNavigator } from "./ExploreNavigator";
 
 const Tab = createMaterialBottomTabNavigator();
 
-const TabNavigator = () => {
+const BottomTabNavigator = () => {
   return (
     <Tab.Navigator activeColor="#f15454">
       <Tab.Screen
         name="Explore"
-        component={Home}
+        component={ExploreNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <Fontisto name="search" size={25} color={color} />
@@ -60,4 +61,4 @@ const TabNavigator = () => {
   );
 };
 
-export { TabNavigator };
+export { BottomTabNavigator };

@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Destination } from "../screens/Destination/Destination";
 import { Guests } from "../screens/Guests/Guests";
-import { TabNavigator } from "./TabNavigator";
+import { BottomTabNavigator } from "./BottomTabNavigator";
 import { SearchResult } from "../screens/SearchResult/SearchResult";
 
 const Stack = createNativeStackNavigator();
@@ -13,7 +13,7 @@ const Router = () => {
       <Stack.Navigator>
         <Stack.Screen
           name={"Home"}
-          component={TabNavigator}
+          component={BottomTabNavigator}
           options={{ headerShown: false }}
         />
         <Stack.Screen name={"Destination"} component={Destination} />

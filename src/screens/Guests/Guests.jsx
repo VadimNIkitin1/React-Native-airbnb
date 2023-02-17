@@ -76,7 +76,14 @@ const Guests = () => {
       <View>
         <Pressable
           style={styles.searchBtn}
-          onPress={() => navigation.navigate("SearchResult")}
+          onPress={() =>
+            navigation.navigate("Home", {
+              screen: "Explore",
+              params: {
+                screen: "SearchResults",
+              },
+            })
+          }
         >
           <Text style={styles.searchBtnText}>Search</Text>
         </Pressable>
