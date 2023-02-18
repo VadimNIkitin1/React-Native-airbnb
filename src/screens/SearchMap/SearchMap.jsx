@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { View, Text } from "react-native";
-import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import { View, Text, FlatList, useWindowDimensions } from "react-native";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import styles from "./styles";
 import { CustomMarker } from "../../components/Custom Marker/CustomMarker";
+import { PostCarousel } from "../../components/PostCarousel/PostCarousel";
 import places from "../../../assets/data/feed";
 
 const SearchMap = () => {
   const [selectedPlace, setSelectedPlace] = useState(null);
+
+  const width = useWindowDimensions().width;
   return (
     <View style={styles.container}>
       <MapView
@@ -29,6 +32,17 @@ const SearchMap = () => {
           />
         ))}
       </MapView>
+      <View style={{ position: "absolute", bottom: 10 }}>
+        <FlatList
+          data={places}
+          renderItem={({ item }) => <PostCarousel post={item} />}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          snapToInterval={width - 50}
+          snapToAlignment={"center"}
+          decelerationRate={"fast"}
+        />
+      </View>
     </View>
   );
 };
