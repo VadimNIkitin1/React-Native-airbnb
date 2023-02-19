@@ -7,6 +7,7 @@ import Feather from "@expo/vector-icons/Feather";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { ExploreNavigator } from "./ExploreNavigator";
 import { SearchMap } from "../screens/SearchMap/SearchMap";
+import { PostScreen } from "../screens/PostScreen/PostScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -15,8 +16,7 @@ const BottomTabNavigator = () => {
     <Tab.Navigator activeColor="#f15454">
       <Tab.Screen
         name="Explore"
-        component={SearchMap}
-        // component={ExploreNavigator}
+        component={ExploreNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <Fontisto name="search" size={25} color={color} />
